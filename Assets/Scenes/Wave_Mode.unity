@@ -563,6 +563,7 @@ RectTransform:
   - {fileID: 732164004}
   - {fileID: 1401845283}
   - {fileID: 1733453808}
+  - {fileID: 1569865516}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -682,7 +683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &180263585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6850,6 +6851,98 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1569865515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1569865516}
+  - component: {fileID: 1569865518}
+  - component: {fileID: 1569865517}
+  - component: {fileID: 1569865519}
+  m_Layer: 5
+  m_Name: Wave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1569865516
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569865515}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 38786128}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 418.8, y: 233.39}
+  m_SizeDelta: {x: 120, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1569865517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569865515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 46238fb1ad7a7a84ba8954c1c860994c, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 2
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Wave: '
+--- !u!222 &1569865518
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569865515}
+  m_CullTransparentMesh: 1
+--- !u!114 &1569865519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569865515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28f4cf9025a6694b85720e383356c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1687477066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7295,17 +7388,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - name: ZomBunny
-    enemy: {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    count: 2
-    rate: 1
-  - name: ZomBear
-    enemy: {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    count: 3
+  - name: Wave 1
+    enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    weight: 3
+    rate: 5
+  - name: Wave 2
+    enemyPool:
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    weight: 5
     rate: 1.5
-  - name: Hellephant
-    enemy: {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    count: 5
+  - name: Wave 3
+    enemyPool:
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    weight: 10
+    rate: 2
+  - name: Wave 4
+    enemyPool:
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    weight: 3
+    rate: 2
+  - name: Wave 5
+    enemyPool:
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    weight: 3
+    rate: 2
+  - name: Wave 6
+    enemyPool:
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    weight: 3
     rate: 2
   spawnPoints:
   - {fileID: 9083842937541373870, guid: 6bbf9ef8fcce5114482d813a9b680d17, type: 3}

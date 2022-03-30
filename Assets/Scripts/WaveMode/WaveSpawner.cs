@@ -10,8 +10,8 @@ public class WaveSpawner : MonoBehaviour
     public class Wave
     {
         public string name;
-        public Transform enemy;
-        public int count;
+        public Transform[] enemyPool;
+        public int weight;
         public float rate;
     }
 
@@ -80,9 +80,12 @@ public class WaveSpawner : MonoBehaviour
 
         if (nextWave + 1 > waves.Length - 1)
         {
-            nextWave = -1; // biar pas di-increment jadi 0
+            //nextWave = -1; // biar pas di-increment jadi 0
             Debug.Log("All Waves Completed! Looping...");
+            return;
         }
+
+        // TODO kondisi wave completed
 
         nextWave++;
     }
@@ -107,11 +110,28 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log("Spawning Wave: " + _wave.name);
         state = SpawnState.SPAWNING;
 
-        // spawn
-        for (int i=0; i<_wave.count; i++)
+        // increment wave UI
+        WaveManager.wave++;
+
+        // menangani enemy pool kosong
+        if (_wave.enemyPool.Length == 0)
         {
-            SpawnEnemy(_wave.enemy);
+            Debug.LogError("Enemy pool is empty!");
+        }
+
+        // spawn
+        for (int i=0; i<_wave.weight; i++)
+        {
+            SpawnEnemy(RandomizeEnemy(_wave));
             yield return new WaitForSeconds(1f / _wave.rate);
+        }
+
+        // wave dengan nomor kelipatan 3
+        if ((nextWave + 1) % 3 == 0)
+        {
+            Debug.Log("SPAWN BOSS WAVE " + (nextWave + 1));
+            // TODO Spawn boss
+            SpawnEnemy(_wave.enemyPool[0]);
         }
 
         // balik set jadi waiting
@@ -125,7 +145,13 @@ public class WaveSpawner : MonoBehaviour
         // spawn enemy
         Debug.Log("Spawning Enemy: " + _enemy.name);
 
+        // TODO setiap enemy ada spawn point masing2?
         Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
         Instantiate(_enemy, _sp.position, _sp.rotation);
+    }
+
+    Transform RandomizeEnemy (Wave _wave)
+    {
+        return _wave.enemyPool[Random.Range(0, _wave.enemyPool.Length)];
     }
 }
