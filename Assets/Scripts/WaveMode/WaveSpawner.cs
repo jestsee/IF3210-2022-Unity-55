@@ -15,6 +15,9 @@ public class WaveSpawner : MonoBehaviour
         public float rate;
     }
 
+    // array of boss
+    public Transform[] bossPool;
+
     // array of waves
     public Wave[] waves;
 
@@ -26,7 +29,6 @@ public class WaveSpawner : MonoBehaviour
 
     public float timeBetweenWaves = 5f;
     private float waveCountdown;
-
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
@@ -39,6 +41,8 @@ public class WaveSpawner : MonoBehaviour
         }
 
         waveCountdown = timeBetweenWaves;
+
+        // initialize Waves[]
     }
 
     private void Update()
@@ -75,12 +79,19 @@ public class WaveSpawner : MonoBehaviour
     {
         Debug.Log("Wave Completed!");
 
+        // kalo wave yang barusan completed merupakan kelipatan 3
+        if (nextWave % 3 == 0)
+        {
+            WeaponUpgradeOption();
+        }
+
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
 
         if (nextWave + 1 > waves.Length - 1)
         {
-            //nextWave = -1; // biar pas di-increment jadi 0
+            // nextWave = -1; // biar pas di-increment jadi 0
+            // stuck di wave 6, belom ada tamat
             Debug.Log("All Waves Completed! Looping...");
             return;
         }
@@ -113,7 +124,7 @@ public class WaveSpawner : MonoBehaviour
         // increment wave UI
         WaveManager.wave++;
 
-        // menangani enemy pool kosong
+        // nemy pool kosong
         if (_wave.enemyPool.Length == 0)
         {
             Debug.LogError("Enemy pool is empty!");
@@ -131,7 +142,8 @@ public class WaveSpawner : MonoBehaviour
         {
             Debug.Log("SPAWN BOSS WAVE " + (nextWave + 1));
             // TODO Spawn boss
-            SpawnEnemy(_wave.enemyPool[0]);
+            //SpawnEnemy(_wave.enemyPool[0]);
+            SpawnBoss(bossPool, nextWave);
         }
 
         // balik set jadi waiting
@@ -153,5 +165,27 @@ public class WaveSpawner : MonoBehaviour
     Transform RandomizeEnemy (Wave _wave)
     {
         return _wave.enemyPool[Random.Range(0, _wave.enemyPool.Length)];
+    }
+
+    void SpawnBoss (Transform[] _bossPool, int wave)
+    {
+        int idx = ((wave + 1) / 3) - 1;
+
+        Transform _boss = _bossPool[idx];
+
+        Debug.Log("Spawning Boss: " + _boss.name);
+
+        // spawn point nya random
+        // atau tentuin point khusus boss?
+        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+        // spawn boss sesuai dengan wave ke berapa
+        Instantiate(_boss, _sp.position, _sp.rotation);
+    }
+
+    void WeaponUpgradeOption()
+    {
+        Debug.Log("Tampilin screen upgrade weapon disini");
+
     }
 }

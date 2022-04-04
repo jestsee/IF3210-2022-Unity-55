@@ -7387,6 +7387,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0237d7b3ea5064f9b490936cca41f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossPool:
+  - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+  - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
   waves:
   - name: Wave 1
     enemyPool:
@@ -7431,7 +7434,7 @@ MonoBehaviour:
   - {fileID: 9083842937541373870, guid: 6bbf9ef8fcce5114482d813a9b680d17, type: 3}
   - {fileID: 304385461253102273, guid: c88f58001921a7a4a9a51563d60192e6, type: 3}
   - {fileID: 6813828724793316333, guid: c0c22a60c7b049f41b6bed6dd108a447, type: 3}
-  timeBetweenWaves: 5
+  timeBetweenWaves: 1
 --- !u!4 &2093855849
 Transform:
   m_ObjectHideFlags: 0
