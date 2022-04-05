@@ -25,12 +25,12 @@ public class GameOverManager : MonoBehaviour
         {
             anim.SetTrigger("GameOver");
 
-            restartTimer += Time.deltaTime;
+            //restartTimer += Time.deltaTime;
 
-            if (restartTimer >= restartDelay)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+            //if (restartTimer >= restartDelay)
+            //{
+            //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //}
         }
     }
 
