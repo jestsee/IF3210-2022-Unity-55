@@ -27,6 +27,9 @@ public class WaveSpawner : MonoBehaviour
     // random spawn point
     public Transform[] spawnPoints;
 
+    // weapon upgrade
+    public WeaponUpgradeUI weaponUpgrade;
+
     public float timeBetweenWaves = 5f;
     private float waveCountdown;
     private float searchCountdown = 1f;
@@ -80,7 +83,7 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log("Wave Completed!");
 
         // kalo wave yang barusan completed merupakan kelipatan 3
-        if (nextWave % 3 == 0)
+        if ((nextWave+1) % 3 == 0 && nextWave != 0)
         {
             WeaponUpgradeOption();
         }
@@ -186,6 +189,7 @@ public class WaveSpawner : MonoBehaviour
     void WeaponUpgradeOption()
     {
         Debug.Log("Tampilin screen upgrade weapon disini");
+        weaponUpgrade.Display();
 
     }
 }
