@@ -38,6 +38,8 @@ public class EnemySpawner : MonoBehaviour
         objectPooler.SpawnFromPool("ZomBear", transform.position, Quaternion.identity);
         objectPooler.SpawnFromPool("ZomBunny", transform.position, Quaternion.identity);
         objectPooler.SpawnFromPool("Hellephant", transform.position, Quaternion.identity);
+        objectPooler.SpawnFromPool("stalkerNew", transform.position, Quaternion.identity);
+        objectPooler.SpawnFromPool("Cat", transform.position, Quaternion.identity);
 
     }
 }
