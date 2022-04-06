@@ -46,6 +46,11 @@ public class GameOverManager : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("Wave_Mode");
+        SceneManager.LoadScene(1);
+    }
+
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene(0);
     }
 }
