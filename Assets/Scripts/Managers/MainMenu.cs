@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("QUIT!");
+        PlayerPrefs.DeleteAll(); // TODO harus disimpen ga ya?
         Application.Quit();
     }
 }

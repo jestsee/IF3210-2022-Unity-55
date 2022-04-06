@@ -23,11 +23,31 @@ public class NameInput : MonoBehaviour
             labelText.GetComponent<TextMeshProUGUI>().text = "Name cannot be empty!";
         } else
         {
+            textDisplay.GetComponent<TextMeshProUGUI>().text = "Welcome " + theName + "!";
+            
+            PlayerPrefs.SetString("name", theName);
+            PlayerPrefs.Save();
+
             // direct ke main menu
             mainMenu.SetActive(true);
             nameInput.SetActive(false);
+        }
+    }
 
-            textDisplay.GetComponent<TextMeshProUGUI>().text = "Welcome " + theName + "!";
+    private void Start()
+    {
+        Debug.Log("Start in NameInput is called");
+        theName = PlayerPrefs.GetString("name");
+        if (string.IsNullOrEmpty(theName) || string.IsNullOrWhiteSpace(theName))
+        {
+            nameInput.SetActive(true);
+            mainMenu.SetActive(false);
+        } else
+        {
+            mainMenu.SetActive(true);
+            nameInput.SetActive(false);
+
+            textDisplay.GetComponent<TextMeshProUGUI>().text = "Hi " + theName + "!";
         }
     }
 }
