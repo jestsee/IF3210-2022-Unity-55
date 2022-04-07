@@ -740,7 +740,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warningText: {fileID: 839222784}
   playerHealth: {fileID: 33458251}
-  restartDelay: 5
 --- !u!1 &103497942
 GameObject:
   m_ObjectHideFlags: 0
@@ -8162,27 +8161,6 @@ MonoBehaviour:
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     weight: 1
-    rate: 2
-  - name: Wave 4
-    enemyPool:
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    weight: 1
-    rate: 2
-  - name: Wave 5
-    enemyPool:
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    weight: 3
-    rate: 2
-  - name: Wave 6
-    enemyPool:
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    weight: 3
     rate: 2
   spawnPoints:
   - {fileID: 9083842937541373870, guid: 6bbf9ef8fcce5114482d813a9b680d17, type: 3}

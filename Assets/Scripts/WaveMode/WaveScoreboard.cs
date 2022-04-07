@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WaveScoreboard : MonoBehaviour
 {
     private Transform entryContainer;
     private Transform entryTemplate;
     private List<Transform> scoreEntryTransformList;
-    private bool change = false;
+    // private bool change = false;
 
     private void Awake()
     {
@@ -17,15 +18,15 @@ public class WaveScoreboard : MonoBehaviour
         DisplayScoreboard();
     }
 
-    private void Update()
-    {
-        if(change)
-        {
-            Debug.Log("change detected");
-            // DisplayScoreboard();
-            change = false;
-        }
-    }
+    //private void Update()
+    //{
+    //    if(change)
+    //    {
+    //        Debug.Log("change detected");
+    //        // DisplayScoreboard();
+    //        change = false;
+    //    }
+    //}
 
     private void CreateScoreEntryTransform(ScoreEntry scoreEntry, Transform container, List<Transform> transformList)
     {
@@ -122,15 +123,16 @@ public class WaveScoreboard : MonoBehaviour
         PlayerPrefs.Save();
 
         // notify changes
-        change = true;
+        // change = true;
     }
 
     public void ClearAllScoreEntry()
     {
         PlayerPrefs.DeleteKey("scoreTable");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         // notify changes
-        change = true;
+        // change = true;
     }
 
     private void DisplayScoreboard()

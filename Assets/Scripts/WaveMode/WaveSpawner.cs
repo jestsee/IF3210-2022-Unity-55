@@ -95,13 +95,18 @@ public class WaveSpawner : MonoBehaviour
         {
             // nextWave = -1; // biar pas di-increment jadi 0
             // stuck di wave 6, belom ada tamat
-            Debug.Log("All Waves Completed! Looping...");
+            Debug.Log("All Waves Completed!");
+            WinManager.isWin = true;
             return;
         }
 
         // TODO kondisi wave completed
-
-        nextWave++;
+        if (!WinManager.isWin)
+        {
+            // klo belom menang lanjut next wave
+            // Debug.Log("Belom menang");
+            nextWave++;
+        }
     }
 
     bool EnemyIsAlive() // masih belom bener
@@ -121,6 +126,12 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave (Wave _wave)
     {
+        // kalo udah menang
+        if (WinManager.isWin)
+        {
+            yield break;
+        }
+
         Debug.Log("Spawning Wave: " + _wave.name);
         state = SpawnState.SPAWNING;
 

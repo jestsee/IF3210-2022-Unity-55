@@ -8,7 +8,9 @@ public class GameOverManager : MonoBehaviour
 {
     public Text warningText;
     public PlayerHealth playerHealth;
+    private Transform gameOverText;    
     private bool isUpdated = false;
+
     // public float restartDelay = 5f;
     // public WaveScoreboard waveScoreboard;
 
@@ -24,13 +26,20 @@ public class GameOverManager : MonoBehaviour
 
     void Update()
     {
-        if (playerHealth.currentHealth <= 0)
+        gameOverText = transform.Find("GameOverText");
+
+        if (playerHealth.currentHealth <= 0 || WinManager.isWin)
         {
+            // set win text
+            if (WinManager.isWin)
+            {
+                gameOverText.GetComponent<Text>().text = "You Win!";
+            }
+
             // get name, wave, score
             string name = PlayerPrefs.GetString("name");
             int wave = WaveManager.wave;
             int score = ScoreManager.score;
-            // Debug.Log("SCORE: " + name + " " + wave + " " + score);
 
             // save score to scoreboard
             if (!isUpdated)
@@ -39,7 +48,7 @@ public class GameOverManager : MonoBehaviour
                 WaveScoreboard _waveScoreboard = waveScoreboard.GetComponent<WaveScoreboard>();
                 if (_waveScoreboard == null)
                 {
-                    Debug.Log("Null weh wv scbrdnya");
+                    Debug.Log("Null weh waveScoreboard-nya");
                 }
                 _waveScoreboard.AddScoreEntry(score, wave, name);
                 isUpdated = true;
