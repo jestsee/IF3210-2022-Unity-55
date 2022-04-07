@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpeedOrb : MonoBehaviour
 {
-    public float speedOrbTime = 0.5f;
-    public int powerUpValue = 10;
+    public float speedOrbTime = 30f;
+    public int powerUpValue = 5;
     Animator anim;
     GameObject player;
     PlayerSpeed playerSpeed;
@@ -22,17 +22,19 @@ public class SpeedOrb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (timer >= healthOrbTime)
-        //{
-        //    // hilang
-        // }
-        // else {
-        if (playerInRange)
+        timer += Time.deltaTime;
+        if (timer >= speedOrbTime)
         {
-            Taken();
-            Destroy(this);
+            Destroy(gameObject);
         }
-        //}
+        else
+        {
+            if (playerInRange)
+            {
+                Taken();
+                Destroy(gameObject);
+            }
+        }
     }
 
     void OnCollisionEnter(Collision other)

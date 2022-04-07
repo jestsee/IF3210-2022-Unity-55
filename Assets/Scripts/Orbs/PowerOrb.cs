@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerOrb : MonoBehaviour
 {
-    public float powerOrbTime = 0.5f;
+    public float powerOrbTime = 30f;
     public int powerUpValue = 10;
     Animator anim;
     GameObject player;
@@ -22,17 +22,19 @@ public class PowerOrb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (timer >= healthOrbTime)
-        //{
-        //    // hilang
-        // }
-        // else {
-        if (playerInRange)
+        timer += Time.deltaTime;
+        if (timer >= powerOrbTime)
         {
-            Taken();
-            Destroy(this);
+            Destroy(gameObject);
         }
-        //}
+        else
+        {
+            if (playerInRange)
+            {
+                Taken();
+                Destroy(gameObject);
+            }
+        }
     }
 
     void OnCollisionEnter(Collision other)

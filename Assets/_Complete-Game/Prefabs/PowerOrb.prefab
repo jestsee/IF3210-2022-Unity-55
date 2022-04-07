@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d572023fc8dca439d7bd171c970c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerOrbTime: 0.5
+  powerOrbTime: 30
   powerUpValue: 10
 --- !u!195 &8369794267398069332
 NavMeshAgent:

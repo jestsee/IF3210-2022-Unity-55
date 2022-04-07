@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthOrb : MonoBehaviour
 {
-    public float healthOrbTime = 0.5f;
+    public float healthOrbTime = 30f;
     public int powerUpValue = 10;
     Animator anim;
     GameObject player;
@@ -22,17 +22,18 @@ public class HealthOrb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (timer >= healthOrbTime)
-        //{
-        //    // hilang
-        // }
-        // else {
+        timer += Time.deltaTime;
+        if (timer >= healthOrbTime)
+        {
+            Destroy(gameObject);
+        }
+        else {
             if (playerInRange)
             {
                 Taken();
-                Destroy(this);
+                Destroy(gameObject);
             }
-        //}
+        }
     }
 
     void OnCollisionEnter(Collision other)

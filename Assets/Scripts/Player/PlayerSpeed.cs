@@ -9,7 +9,7 @@ public class PlayerSpeed : MonoBehaviour
     public float currentSpeed;
     Animator anim;
     public Slider speedSlider;
-    float maxSpeed = 30f;
+    float maxSpeed = 20f;
 
     // Start is called before the first frame update
     void Awake()
