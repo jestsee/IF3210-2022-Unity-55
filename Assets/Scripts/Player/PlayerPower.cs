@@ -7,6 +7,7 @@ public class PlayerPower : MonoBehaviour
 {
     public int startingPower = 20;
     public int currentPower;
+    int maxPower = 100;
     Animator anim;
     public Slider powerSlider;
 
@@ -25,7 +26,14 @@ public class PlayerPower : MonoBehaviour
 
     public void TakePowerUp(int amount)
     {
-        currentPower += amount;
+        if (currentPower + amount > maxPower)
+        {
+            currentPower = maxPower;
+        }
+        else
+        {
+            currentPower += amount;
+        }
         powerSlider.value = currentPower;
     }
 }

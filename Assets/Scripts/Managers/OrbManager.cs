@@ -30,10 +30,9 @@ public class OrbManager : MonoBehaviour
         //int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
         // Menduplikasi enemy
-        float x = Random.Range(-50, 50);
-        float y = Random.Range(-50, 50);
-        float z = Random.Range(-50, 50);
-        Instantiate(Factory.FactoryMethod(spawnOrb), new Vector3(x,y,z), Quaternion.identity);
+        float x = Random.Range(-34, 34);
+        float y = Random.Range(-34, 34);
+        Instantiate(Factory.FactoryMethod(spawnOrb), new Vector3(x,0,y), Quaternion.identity);
 
     }
 }

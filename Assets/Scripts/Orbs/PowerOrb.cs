@@ -10,6 +10,7 @@ public class PowerOrb : MonoBehaviour
     GameObject player;
     PlayerPower playerPower;
     float timer;
+    bool playerInRange;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,9 +22,34 @@ public class PowerOrb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer >= powerOrbTime)
+        // if (timer >= healthOrbTime)
+        //{
+        //    // hilang
+        // }
+        // else {
+        if (playerInRange)
         {
-            // hilang
+            Taken();
+            Destroy(this);
+        }
+        //}
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        // Set player in range
+        if (other.gameObject == player)
+        {
+            playerInRange = true;
+        }
+    }
+
+    // Callback jika ada object yang keluar dari trigger
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject == player)
+        {
+            playerInRange = false;
         }
     }
 

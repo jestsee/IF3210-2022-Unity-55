@@ -10,6 +10,7 @@ public class HealthOrb : MonoBehaviour
     GameObject player;
     PlayerHealth playerHealth;
     float timer;
+    bool playerInRange;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,9 +22,35 @@ public class HealthOrb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer >= healthOrbTime)
+        // if (timer >= healthOrbTime)
+        //{
+        //    // hilang
+        // }
+        // else {
+            if (playerInRange)
+            {
+                Taken();
+                Destroy(this);
+            }
+        //}
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        // Set player in range
+        if (other.gameObject == player)
         {
-            // hilang
+            playerInRange = true;
+
+        }
+    }
+
+    // Callback jika ada object yang keluar dari trigger
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject == player)
+        {
+            playerInRange = false;
         }
     }
 

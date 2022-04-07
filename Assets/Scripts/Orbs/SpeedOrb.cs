@@ -11,6 +11,7 @@ public class SpeedOrb : MonoBehaviour
     PlayerSpeed playerSpeed;
     float timer;
     // Start is called before the first frame update
+    bool playerInRange;
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -21,9 +22,35 @@ public class SpeedOrb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer >= speedOrbTime)
+        // if (timer >= healthOrbTime)
+        //{
+        //    // hilang
+        // }
+        // else {
+        if (playerInRange)
         {
-            // hilang
+            Taken();
+            Destroy(this);
+        }
+        //}
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        // Set player in range
+        if (other.gameObject == player)
+        {
+            playerInRange = true;
+
+        }
+    }
+
+    // Callback jika ada object yang keluar dari trigger
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject == player)
+        {
+            playerInRange = false;
         }
     }
 
