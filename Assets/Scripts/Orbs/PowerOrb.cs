@@ -15,7 +15,7 @@ public class PowerOrb : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        playerPower = player.GetComponent<PlayerPower>();
+        playerPower = player.GetComponentInChildren<PlayerPower>();
         anim = GetComponent<Animator>();
     }
 
