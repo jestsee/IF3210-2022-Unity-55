@@ -8,43 +8,23 @@ public class WaveScoreboard : MonoBehaviour
     private Transform entryContainer;
     private Transform entryTemplate;
     private List<Transform> scoreEntryTransformList;
+    private bool change = false;
 
     private void Awake()
     {
         Debug.Log("WaveScoreboard awake called");
-        entryContainer = transform.Find("ScoreEntryContainer");
-        entryTemplate = entryContainer.Find("ScoreEntryTemplate");
+        // AddScoreEntry(100, 2, "AHA");
+        DisplayScoreboard();
+    }
 
-        entryTemplate.gameObject.SetActive(false);
-
-        // test add new entry
-        // AddScoreEntry(10000, 14, "Haha");
-
-        string jsonString = PlayerPrefs.GetString("scoreTable");
-        Scores scores = JsonUtility.FromJson<Scores>(jsonString);
-
-        // sort entry list by score
-        for (int i = 0; i < scores.scoreEntryList.Count; i++)
+    private void Update()
+    {
+        if(change)
         {
-            for (int j = i+1; j < scores.scoreEntryList.Count; j++)
-            {
-                if (scores.scoreEntryList[j].score > scores.scoreEntryList[i].score)
-                {
-                    // swap
-                    ScoreEntry temp = scores.scoreEntryList[i];
-                    scores.scoreEntryList[i] = scores.scoreEntryList[j];
-                    scores.scoreEntryList[j] = temp;
-                }
-            }
+            Debug.Log("change detected");
+            // DisplayScoreboard();
+            change = false;
         }
-
-        scoreEntryTransformList = new List<Transform>();
-        foreach (ScoreEntry scoreEntry in scores.scoreEntryList)
-        {
-            CreateScoreEntryTransform(scoreEntry, entryContainer, scoreEntryTransformList);
-        }
-
-        // Debug.Log(PlayerPrefs.GetString("scoreTable"));
     }
 
     private void CreateScoreEntryTransform(ScoreEntry scoreEntry, Transform container, List<Transform> transformList)
@@ -117,7 +97,7 @@ public class WaveScoreboard : MonoBehaviour
         transformList.Add(entryTransform);
     }
 
-    private void AddScoreEntry(int score, int wave, string name)
+    public void AddScoreEntry(int score, int wave, string name)
     {
         // create scoreEntry
         ScoreEntry scoreEntry = new ScoreEntry { name = name, score = score, wave = wave };
@@ -125,14 +105,67 @@ public class WaveScoreboard : MonoBehaviour
         // load saved scores
         string jsonString = PlayerPrefs.GetString("scoreTable");
         Scores scores = JsonUtility.FromJson<Scores>(jsonString);
-        
+
+        if (scores == null)
+        {
+            Debug.Log("scores null");
+            scores = new Scores();
+            scores.scoreEntryList = new List<ScoreEntry>();
+        }
+
         // add new entry to scores
         scores.scoreEntryList.Add(scoreEntry);
         
-        // ssave updated scores
+        // save updated scores
         string json = JsonUtility.ToJson(scores);
         PlayerPrefs.SetString("scoreTable", json);
         PlayerPrefs.Save();
+
+        // notify changes
+        change = true;
+    }
+
+    public void ClearAllScoreEntry()
+    {
+        PlayerPrefs.DeleteKey("scoreTable");
+
+        // notify changes
+        change = true;
+    }
+
+    private void DisplayScoreboard()
+    {
+        entryContainer = transform.Find("ScoreEntryContainer");
+        entryTemplate = entryContainer.Find("ScoreEntryTemplate");
+
+        entryTemplate.gameObject.SetActive(false);
+
+        string jsonString = PlayerPrefs.GetString("scoreTable");
+        Scores scores = JsonUtility.FromJson<Scores>(jsonString);
+
+        // sort entry list by score
+        if (scores != null)
+        {
+            for (int i = 0; i < scores.scoreEntryList.Count; i++)
+            {
+                for (int j = i + 1; j < scores.scoreEntryList.Count; j++)
+                {
+                    if (scores.scoreEntryList[j].score > scores.scoreEntryList[i].score)
+                    {
+                        // swap
+                        ScoreEntry temp = scores.scoreEntryList[i];
+                        scores.scoreEntryList[i] = scores.scoreEntryList[j];
+                        scores.scoreEntryList[j] = temp;
+                    }
+                }
+            }
+
+            scoreEntryTransformList = new List<Transform>();
+            foreach (ScoreEntry scoreEntry in scores.scoreEntryList)
+            {
+                CreateScoreEntryTransform(scoreEntry, entryContainer, scoreEntryTransformList);
+            }
+        }
     }
 
     private class Scores
