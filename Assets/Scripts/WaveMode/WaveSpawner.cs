@@ -82,12 +82,6 @@ public class WaveSpawner : MonoBehaviour
     {
         Debug.Log("Wave Completed!");
 
-        // kalo wave yang barusan completed merupakan kelipatan 3
-        if ((nextWave+1) % 3 == 0 && nextWave != 0)
-        {
-            WeaponUpgradeOption();
-        }
-
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
 
@@ -98,6 +92,12 @@ public class WaveSpawner : MonoBehaviour
             Debug.Log("All Waves Completed!");
             WinManager.isWin = true;
             return;
+        }
+
+        // kalo wave yang barusan completed merupakan kelipatan 3 dan belum menang
+        if ((nextWave + 1) % 3 == 0 && nextWave != 0 && !WinManager.isWin)
+        {
+            WeaponUpgradeOption();
         }
 
         // TODO kondisi wave completed
@@ -200,7 +200,7 @@ public class WaveSpawner : MonoBehaviour
     void WeaponUpgradeOption()
     {
         Debug.Log("Tampilin screen upgrade weapon disini");
-        weaponUpgrade.Display();
+        weaponUpgrade.Pause();
 
     }
 }

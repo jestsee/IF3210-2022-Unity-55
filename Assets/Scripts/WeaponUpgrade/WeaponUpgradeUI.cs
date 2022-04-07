@@ -6,19 +6,16 @@ public class WeaponUpgradeUI : MonoBehaviour
 {
     private Transform weaponUpgradeTemplate;
     private Transform container;
-    private float durationInput = 3f;
-    private float duration;
+    public static bool GameIsPaused = false;
+
+    // private float durationInput = 3f;
+    // private float duration;
 
     private void Awake()
     {
         container = transform.Find("Container");
         weaponUpgradeTemplate = container.Find("WeaponUpgradeTemplate");
-        weaponUpgradeTemplate.gameObject.SetActive(false);
-    }
-
-    private void Show()
-    {
-        weaponUpgradeTemplate.gameObject.SetActive(true);
+        // weaponUpgradeTemplate.gameObject.SetActive(false);
     }
 
     private void Hide()
@@ -26,21 +23,25 @@ public class WeaponUpgradeUI : MonoBehaviour
         weaponUpgradeTemplate.gameObject.SetActive(false);
     }
 
-    public void Display()
+    private void Show()
     {
-        Show();
-        duration = durationInput;
+        weaponUpgradeTemplate.gameObject.SetActive(true);
+        // duration = durationInput;
     }
 
-    private void Update()
+    public void Pause()
     {
-        if (duration <= 0)
-        {
-            Hide();
-        }
-        else
-        {
-            duration -= Time.deltaTime;
-        }
+        Show();
+
+        // freeze the game
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+    }
+
+    public void Continue()
+    {
+        Hide();
+        Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 }
