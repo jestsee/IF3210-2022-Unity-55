@@ -5,25 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerSpeed : MonoBehaviour
 {
-    public int startingSpeed = 10;
-    public int currentSpeed;
+    public float startingSpeed = 10f;
+    public float currentSpeed;
     Animator anim;
     public Slider speedSlider;
-    public Image damageImage;
-    public AudioClip deathClip;
-    AudioSource playerAudio;
-    PlayerMovement playerMovement;
-    PlayerShooting playerShooting;
-    PlayerHealth playerHealth;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         anim = GetComponent<Animator>();
-        playerAudio = GetComponent<AudioSource>();
-        playerMovement = GetComponent<PlayerMovement>();
-        playerHealth = GetComponent<PlayerHealth>(); //
-        playerShooting = GetComponentInChildren<PlayerShooting>();
         currentSpeed = startingSpeed;
     }
 

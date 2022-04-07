@@ -2,7 +2,8 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 6f;
+    //public float speed = 6f;
+    PlayerSpeed playerSpeed;
     Vector3 movement;
     Animator anim;
     Rigidbody playerRigidbody;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Mendapatkan komponen Rigidbody
         playerRigidbody = GetComponent<Rigidbody>();
+        playerSpeed = GetComponent<PlayerSpeed>();
     }
 
     private void FixedUpdate()
@@ -41,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         movement.Set(h, 0f, v);
 
         //Menormalisasi nilai vector agar total panjang dari vector adalah 1
-        movement = movement.normalized * speed * Time.deltaTime;
+        movement = movement.normalized * playerSpeed.currentSpeed * Time.deltaTime;
 
         //Move to position
         playerRigidbody.MovePosition(transform.position + movement);

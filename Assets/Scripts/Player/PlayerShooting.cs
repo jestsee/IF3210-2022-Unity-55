@@ -2,10 +2,11 @@
 
 public class PlayerShooting : MonoBehaviour
 {
-    public int damagePerShot = 20;                  
+    //public int damagePerShot = 20;                  
     public float timeBetweenBullets = 0.15f;        
-    public float range = 100f;                      
+    public float range = 100f;
 
+    PlayerPower playerPower;
     float timer;                                    
     Ray shootRay = new Ray();                                   
     RaycastHit shootHit;                            
@@ -23,6 +24,7 @@ public class PlayerShooting : MonoBehaviour
         gunLine = GetComponent<LineRenderer>();
         gunAudio = GetComponent<AudioSource>();
         gunLight = GetComponent<Light>();
+        playerPower = GetComponent<PlayerPower>();
     }
 
     void Update()
@@ -69,7 +71,7 @@ public class PlayerShooting : MonoBehaviour
 
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(damagePerShot, shootHit.point);
+                enemyHealth.TakeDamage(playerPower.currentPower, shootHit.point);
             }
 
             gunLine.SetPosition(1, shootHit.point);
