@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerPower : MonoBehaviour
 {
-    public int startingPower = 100;
+    public int startingPower = 10;
     public int currentPower;
     Animator anim;
-    public Slider healthSlider;
+    public Slider powerSlider;
     public Image damageImage;
     public AudioClip deathClip;
     AudioSource playerAudio;
@@ -31,5 +31,11 @@ public class PlayerPower : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void TakePowerUp(int amount)
+    {
+        currentPower += amount;
+        powerSlider.value = currentPower;
     }
 }

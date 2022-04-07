@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4657511723775529484}
   - component: {fileID: 4657511723775529483}
   - component: {fileID: 4657511723775529485}
+  - component: {fileID: -6770075547395189657}
+  - component: {fileID: 8369794267398069332}
   m_Layer: 0
   m_Name: PowerOrb
   m_TagString: Untagged
@@ -99,3 +101,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6770075547395189657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657511723775529482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d572023fc8dca439d7bd171c970c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerOrbTime: 0.5
+  powerUpValue: 10
+--- !u!195 &8369794267398069332
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657511723775529482}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.7399999
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 3.4799998
+  m_BaseOffset: 1.7399999
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

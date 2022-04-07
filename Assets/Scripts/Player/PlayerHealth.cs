@@ -68,6 +68,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void TakePowerUp(int amount)
+    {
+        currentHealth += amount;
+        healthSlider.value = currentHealth;
+    }
+
 
     void Death()
     {

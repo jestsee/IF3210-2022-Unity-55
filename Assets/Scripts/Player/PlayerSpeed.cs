@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerSpeed : MonoBehaviour
 {
-    public int startingSpeed = 100;
+    public int startingSpeed = 10;
     public int currentSpeed;
     Animator anim;
-    public Slider healthSlider;
+    public Slider speedSlider;
     public Image damageImage;
     public AudioClip deathClip;
     AudioSource playerAudio;
@@ -31,5 +31,11 @@ public class PlayerSpeed : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void TakePowerUp(int amount)
+    {
+        currentSpeed += amount;
+        speedSlider.value = currentSpeed;
     }
 }
