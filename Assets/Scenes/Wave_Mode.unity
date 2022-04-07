@@ -596,6 +596,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverManager: {fileID: 38786130}
+--- !u!114 &33458255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33458244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2949b793f97fe4081d1ab97f4f4c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &38786124
 GameObject:
   m_ObjectHideFlags: 0
@@ -6246,7 +6258,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b75a561f374f89247a62336b50288d40, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8465,8 +8476,8 @@ MonoBehaviour:
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    weight: 1
-    rate: 2
+    weight: 100
+    rate: 10
   - name: Wave 4
     enemyPool:
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
