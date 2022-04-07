@@ -108,7 +108,7 @@ public class WaveScoreboard : MonoBehaviour
 
         if (scores == null)
         {
-            Debug.Log("scores null");
+            Debug.Log("scores null tp tenang udah ke-handle");
             scores = new Scores();
             scores.scoreEntryList = new List<ScoreEntry>();
         }
@@ -136,6 +136,13 @@ public class WaveScoreboard : MonoBehaviour
     private void DisplayScoreboard()
     {
         entryContainer = transform.Find("ScoreEntryContainer");
+
+        // buat biar ga muncul error di scene Wave_Mode
+        if (entryContainer == null)
+        {
+            return;
+        }
+
         entryTemplate = entryContainer.Find("ScoreEntryTemplate");
 
         entryTemplate.gameObject.SetActive(false);

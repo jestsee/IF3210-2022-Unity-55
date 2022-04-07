@@ -8,7 +8,8 @@ public class GameOverManager : MonoBehaviour
 {
     public Text warningText;
     public PlayerHealth playerHealth;
-    public float restartDelay = 5f;
+    private bool isUpdated = false;
+    // public float restartDelay = 5f;
     // public WaveScoreboard waveScoreboard;
 
     Animator anim;
@@ -29,10 +30,20 @@ public class GameOverManager : MonoBehaviour
             string name = PlayerPrefs.GetString("name");
             int wave = WaveManager.wave;
             int score = ScoreManager.score;
-            Debug.Log("SCORE: " + name + " " + wave + " " + score);
+            // Debug.Log("SCORE: " + name + " " + wave + " " + score);
 
             // save score to scoreboard
-            // WaveScoreboard.AddScoreEntry(score, wave, name);
+            if (!isUpdated)
+            {
+                GameObject waveScoreboard = GameObject.FindGameObjectWithTag("ScoreboardWave");
+                WaveScoreboard _waveScoreboard = waveScoreboard.GetComponent<WaveScoreboard>();
+                if (_waveScoreboard == null)
+                {
+                    Debug.Log("Null weh wv scbrdnya");
+                }
+                _waveScoreboard.AddScoreEntry(score, wave, name);
+                isUpdated = true;
+            }
 
             // display game over animation
             anim.SetTrigger("GameOver");
