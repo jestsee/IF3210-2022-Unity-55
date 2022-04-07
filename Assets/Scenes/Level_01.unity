@@ -888,7 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 33458251}
   enemy: {fileID: 7193182883264875344, guid: 5caccc7eeef745c4cb8cdf5aeb3c2d0f, type: 3}
-  spawnEnemy: 1
+  spawnEnemy: 4
   spawnTime: 3
   spawnPoints:
   - {fileID: 530599532}
@@ -907,7 +907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 33458251}
   enemy: {fileID: 6451117433343572282, guid: 9fb82f159b80fbb4f86ae46808c152cd, type: 3}
-  spawnEnemy: 1
+  spawnEnemy: 3
   spawnTime: 3
   spawnPoints:
   - {fileID: 128097486}
@@ -6400,7 +6400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725605032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100, y: 0, z: 100}
+  m_LocalPosition: {x: 22.5, y: 0, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7052,7 +7052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159231083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30, y: 0, z: 20}
+  m_LocalPosition: {x: 22.5, y: 0, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7533,7 +7533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 33458251}
   orb: {fileID: 4657511723775529482, guid: 372c1cb97a0b4e540b8d303e12c33815, type: 3}
-  spawnOrb: 1
+  spawnOrb: 0
   spawnTime: 3
   spawnPoints:
   - {fileID: 725605033}
@@ -7566,7 +7566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 33458251}
   orb: {fileID: 2535262335353558127, guid: 7fbb627886736534ba911bf6675933f4, type: 3}
-  spawnOrb: 1
+  spawnOrb: 2
   spawnTime: 3
   spawnPoints:
   - {fileID: 1571986862}
@@ -7675,7 +7675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571986861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50, y: 0, z: 50}
+  m_LocalPosition: {x: -20.5, y: 0, z: 12.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
