@@ -7,14 +7,13 @@ public class OrbManager : MonoBehaviour
     public PlayerHealth playerHealth;
     public GameObject orb;
     public int spawnOrb;
-    public float spawnTime = 3f;
-    public Transform[] spawnPoints;
+    public float spawnTime = 15f;
 
     [SerializeField]
     public MonoBehaviour factory;
     IFactory Factory { get { return factory as IFactory; } }
 
-    void Start()
+    void Awake()
     {
         //Mengeksekusi fungs Spawn setiap beberapa detik sesui dengan nilai spawnTime
         InvokeRepeating("Spawn", spawnTime, spawnTime);
@@ -28,10 +27,13 @@ public class OrbManager : MonoBehaviour
             return;
         }
 
-        int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+        //int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
         // Menduplikasi enemy
-        Instantiate(Factory.FactoryMethod(spawnOrb), spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        float x = Random.Range(-50, 50);
+        float y = Random.Range(-50, 50);
+        float z = Random.Range(-50, 50);
+        Instantiate(Factory.FactoryMethod(spawnOrb), new Vector3(x,y,z), Quaternion.identity);
 
     }
 }
