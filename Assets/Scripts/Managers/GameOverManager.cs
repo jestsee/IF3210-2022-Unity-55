@@ -41,17 +41,17 @@ public class GameOverManager : MonoBehaviour
             int score = ScoreManager.score;
 
             // save score to scoreboard
-            if (!isUpdated)
-            {
-                GameObject waveScoreboard = GameObject.FindGameObjectWithTag("ScoreboardWave");
-                WaveScoreboard _waveScoreboard = waveScoreboard.GetComponent<WaveScoreboard>();
-                if (_waveScoreboard == null)
-                {
-                    Debug.Log("Null weh waveScoreboard-nya");
-                }
-                _waveScoreboard.AddScoreEntry(score, wave, name);
-                isUpdated = true;
-            }
+            //if (!isUpdated)
+            //{
+                //GameObject waveScoreboard = GameObject.FindGameObjectWithTag("ScoreboardWave");
+                //WaveScoreboard _waveScoreboard = waveScoreboard.GetComponent<WaveScoreboard>();
+                //if (_waveScoreboard == null)
+                //{
+                //    Debug.Log("Null weh waveScoreboard-nya");
+                //}
+                //_waveScoreboard.AddScoreEntry(score, wave, name);
+                //isUpdated = true;
+            //}
 
             // display game over animation
             anim.SetTrigger("GameOver");
