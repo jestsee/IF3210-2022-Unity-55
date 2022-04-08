@@ -23,7 +23,6 @@ public class GameOverManager : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-
     void Update()
     {
         gameOverText = transform.Find("GameOverText");
@@ -79,10 +78,12 @@ public class GameOverManager : MonoBehaviour
     public void RestartButton()
     {
         SceneManager.LoadScene(1);
+        WinManager.isWin = false;
     }
 
     public void MainMenuButton()
     {
         SceneManager.LoadScene(0);
+        WinManager.isWin = false;
     }
 }

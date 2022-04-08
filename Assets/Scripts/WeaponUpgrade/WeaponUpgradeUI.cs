@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponUpgradeUI : MonoBehaviour
 {
-    private Transform weaponUpgradeTemplate;
+    private Button upgradeDiagonalButton;
+    private Button upgradeFasterButton;
     private Transform container;
     public static bool GameIsPaused = false;
 
@@ -14,6 +16,11 @@ public class WeaponUpgradeUI : MonoBehaviour
     private void Awake()
     {
         container = transform.Find("WeaponUpgradeContainer");
+        var canvas = container.Find("Canvas");
+        var opt = canvas.Find("WeaponUpgradeOptions");
+        
+        upgradeDiagonalButton = opt.Find("UpgradeDiagonalButton").GetComponent<Button>();
+        upgradeFasterButton = opt.Find("UpgradeFasterButton").GetComponent<Button>();
     }
 
     public void Pause()
@@ -25,6 +32,16 @@ public class WeaponUpgradeUI : MonoBehaviour
 
     public void SkipOrContinue()
     {
+        if (WeaponUpgradeManager.isMaxUpgradeDiagonal)
+        {
+            upgradeDiagonalButton.interactable = false;
+        }
+
+        if (WeaponUpgradeManager.isMaxUpgradeFaster)
+        {
+            upgradeFasterButton.interactable = false;
+        }
+
         container.gameObject.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;

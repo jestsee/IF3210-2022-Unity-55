@@ -8965,6 +8965,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2089035395}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2089035396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9035,67 +9047,50 @@ MonoBehaviour:
   bossPool:
   - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
   - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+  - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
   waves:
-  - name: Wave 1
+  - name: ya gitu
     enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     weight: 1
     rate: 5
-  - name: Wave 2
+  - name: ya gitu
     enemyPool:
-    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    weight: 1
-    rate: 1.5
-  - name: Wave 3
-    enemyPool:
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     weight: 1
-    rate: 10
-  - name: Wave 4
+    rate: 5
+  - name: ya gitu
     enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     weight: 1
-    rate: 2
-  - name: Wave 5
+    rate: 5
+  - name: ya gitu
     enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     weight: 1
-    rate: 2
-  - name: Wave 6
+    rate: 5
+  - name: ya gitu
     enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     weight: 1
-    rate: 2
-  - name: Wave 7
+    rate: 5
+  - name: ya gitu
     enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     weight: 1
-    rate: 2
-  - name: Wave 8
-    enemyPool:
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    weight: 1
-    rate: 2
-  - name: Wave 9
-    enemyPool:
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    weight: 1
-    rate: 2
+    rate: 5
   spawnPoints:
   - {fileID: 9083842937541373870, guid: 6bbf9ef8fcce5114482d813a9b680d17, type: 3}
   - {fileID: 304385461253102273, guid: c88f58001921a7a4a9a51563d60192e6, type: 3}

@@ -9,7 +9,8 @@ public class WeaponUpgrade : MonoBehaviour
     private int levelDiagonalWeapon; // maks 9x upgrade
     private int levelFasterWeapon;
 
-    // TODO max level?
+    private const int maxLevelDiagonal = 1;
+    private const int maxLevelSpeed = 9;
 
     private void Awake()
     {
@@ -35,6 +36,11 @@ public class WeaponUpgrade : MonoBehaviour
 
         Instantiate(gunBarrelEnd, gunBarrelEnd.position, right, player.transform);
         Instantiate(gunBarrelEnd, gunBarrelEnd.position, left, player.transform);
+
+        if (levelDiagonalWeapon >= maxLevelDiagonal)
+        {
+            WeaponUpgradeManager.isMaxUpgradeDiagonal = true;
+        }
     }
 
     public void UpgradeFasterWeapon()
@@ -42,14 +48,17 @@ public class WeaponUpgrade : MonoBehaviour
         levelFasterWeapon++;
 
         // TODO akses semua gunBarrelEnd
+        
+        if (levelDiagonalWeapon >= maxLevelDiagonal)
+        {
+            WeaponUpgradeManager.isMaxUpgradeDiagonal = true;
+        }
     }
 
     public void UpgradeRearWeapon()
     {
         var rotationY = player.transform.eulerAngles.y;
-        var backward = Quaternion.Euler(0, -1 * rotationY, 0);
+        var backward = Quaternion.Euler(0, rotationY + 180, 0);
         Instantiate(gunBarrelEnd, gunBarrelEnd.position, backward, player.transform);
-
-        // TODO masih aneh
     }
 }
