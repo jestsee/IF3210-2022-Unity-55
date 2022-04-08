@@ -33,7 +33,6 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
         {
             Shoot();
-            // Shoot1();
         }
 
         if (timer >= timeBetweenBullets * effectsDisplayTime)
@@ -64,41 +63,6 @@ public class PlayerShooting : MonoBehaviour
 
         shootRay.origin = transform.position;
         shootRay.direction = transform.forward;
-
-        if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
-        {
-            EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
-
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(damagePerShot, shootHit.point);
-            }
-
-            gunLine.SetPosition(1, shootHit.point);
-        }
-        else
-        {
-            gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
-        }
-    }
-
-    public void Shoot1()
-    {
-        timer = 0f;
-
-        gunAudio.Play();
-
-        gunLight.enabled = true;
-
-        gunParticles.Stop();
-        gunParticles.Play();
-
-        gunLine.enabled = true;
-        gunLine.SetPosition(0, transform.position);
-
-        shootRay.origin = transform.position;
-        // shootRay.direction = transform.forward + transform.right; // diagonal ke kanan dah work
-        shootRay.direction = transform.forward + transform.right * -1; // diagonal ke kiri
 
         if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
         {

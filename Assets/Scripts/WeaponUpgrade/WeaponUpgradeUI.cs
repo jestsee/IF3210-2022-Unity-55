@@ -13,34 +13,19 @@ public class WeaponUpgradeUI : MonoBehaviour
 
     private void Awake()
     {
-        container = transform.Find("Container");
-        weaponUpgradeTemplate = container.Find("WeaponUpgradeTemplate");
-        // weaponUpgradeTemplate.gameObject.SetActive(false);
-    }
-
-    private void Hide()
-    {
-        weaponUpgradeTemplate.gameObject.SetActive(false);
-    }
-
-    private void Show()
-    {
-        weaponUpgradeTemplate.gameObject.SetActive(true);
-        // duration = durationInput;
+        container = transform.Find("WeaponUpgradeContainer");
     }
 
     public void Pause()
     {
-        Show();
-
-        // freeze the game
+        container.gameObject.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
 
-    public void Continue()
+    public void SkipOrContinue()
     {
-        Hide();
+        container.gameObject.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
