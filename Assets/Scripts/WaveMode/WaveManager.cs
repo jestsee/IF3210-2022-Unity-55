@@ -9,7 +9,6 @@ public class WaveManager : MonoBehaviour
 
     Text text;
 
-
     void Awake()
     {
         text = GetComponent<Text>();
