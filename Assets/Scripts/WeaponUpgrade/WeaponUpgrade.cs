@@ -9,8 +9,11 @@ public class WeaponUpgrade : MonoBehaviour
     private int levelDiagonalWeapon; // maks 9x upgrade
     private int levelFasterWeapon;
 
-    private const int maxLevelDiagonal = 1;
-    private const int maxLevelSpeed = 9;
+    // max level atur disini dah
+    private const int maxLevelDiagonal = 9;
+    private const int maxLevelSpeed = 2;
+
+    PlayerShooting[] playerShootings;
 
     private void Awake()
     {
@@ -47,11 +50,17 @@ public class WeaponUpgrade : MonoBehaviour
     {
         levelFasterWeapon++;
 
-        // TODO akses semua gunBarrelEnd
-        
-        if (levelDiagonalWeapon >= maxLevelDiagonal)
+        // akses semua gunBarrelEnd
+        playerShootings = GetComponentsInChildren<PlayerShooting>();
+        Debug.Log("Jumlah player shooting: " + playerShootings.Length);
+        foreach (PlayerShooting p in playerShootings)
+        {   
+            p.timeBetweenBullets -= 0.145f;
+        }
+
+        if (levelFasterWeapon >= maxLevelSpeed)
         {
-            WeaponUpgradeManager.isMaxUpgradeDiagonal = true;
+            WeaponUpgradeManager.isMaxUpgradeFaster = true;
         }
     }
 

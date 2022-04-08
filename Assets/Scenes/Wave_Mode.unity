@@ -6354,7 +6354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerShot: 20
-  timeBetweenBullets: 0.15
+  timeBetweenBullets: 0.3
   range: 100
 --- !u!1 &732164003
 GameObject:
@@ -8601,7 +8601,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1820739482}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 33458255}
+        m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
+        m_MethodName: UpgradeFasterWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 900876093}
+        m_TargetAssemblyTypeName: WeaponUpgradeUI, Assembly-CSharp
+        m_MethodName: SkipOrContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1820739482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9048,48 +9072,120 @@ MonoBehaviour:
   - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
   - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
   - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+  - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+  - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
   waves:
-  - name: ya gitu
+  - name: 1
     enemyPool:
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     weight: 1
     rate: 5
-  - name: ya gitu
+  - name: 2
     enemyPool:
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     weight: 1
     rate: 5
-  - name: ya gitu
+  - name: 3
     enemyPool:
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     weight: 1
     rate: 5
-  - name: ya gitu
+  - name: 4
     enemyPool:
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     weight: 1
     rate: 5
-  - name: ya gitu
+  - name: 5
     enemyPool:
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     weight: 1
     rate: 5
-  - name: ya gitu
+  - name: 6
     enemyPool:
     - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
     weight: 1
+    rate: 5
+  - name: 7
+    enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    weight: 1
+    rate: 5
+  - name: 8
+    enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    weight: 1
+    rate: 5
+  - name: 9
+    enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    weight: 1
+    rate: 5
+  - name: 10
+    enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    weight: 1
+    rate: 5
+  - name: 11
+    enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    weight: 1
+    rate: 5
+  - name: 12
+    enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    weight: 1
+    rate: 5
+  - name: 13
+    enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    weight: 1
+    rate: 5
+  - name: 14
+    enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    weight: 1
+    rate: 5
+  - name: 15
+    enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    weight: 1
+    rate: 5
+  - name: 16
+    enemyPool:
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    weight: 1000
     rate: 5
   spawnPoints:
   - {fileID: 9083842937541373870, guid: 6bbf9ef8fcce5114482d813a9b680d17, type: 3}
