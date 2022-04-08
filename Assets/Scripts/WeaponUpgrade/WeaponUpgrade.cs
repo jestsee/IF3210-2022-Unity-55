@@ -6,8 +6,8 @@ public class WeaponUpgrade : MonoBehaviour
 {
     private Transform gunBarrelEnd;
     private GameObject player;
-    private int levelDiagonalWeapon; // maks 9x upgrade
-    private int levelFasterWeapon;
+    public int levelDiagonalWeapon; // maks 9x upgrade
+    public int levelFasterWeapon;
 
     // max level atur disini dah
     private const int maxLevelDiagonal = 9;

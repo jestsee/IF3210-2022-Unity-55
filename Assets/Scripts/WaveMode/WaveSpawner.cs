@@ -137,6 +137,7 @@ public class WaveSpawner : MonoBehaviour
 
         // increment wave UI
         WaveManager.wave++;
+        Debug.Log("Wave ke " + WaveManager.wave);
 
         // nemy pool kosong
         if (_wave.enemyPool.Length == 0)
