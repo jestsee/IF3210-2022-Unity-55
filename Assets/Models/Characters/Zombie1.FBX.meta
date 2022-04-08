@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 7653b6509c809344fb537e797ed3aa55
+guid: bac86a0553c07ce44aea742b31ba1e5b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: Take 001
+      74: -6257440219318784398
+    second: ZombieFree@animation
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -75,7 +75,17 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - aaf26aa349ea44946941d024a03001ba
+  - 60fc51b749bdc7847bace47b28f26ce7
+  - aed8def3984ca184ea708d186adbb917
+  - 6e1417135a6e0074aa027d16b3267bfc
+  - 2606e52bbfd41b042b8188889b8c2d1f
+  - 4d4755d9058d02c44921d1e574be8535
+  - 2491a0544664ac84b92052387bafc8c5
+  - 5790cd5878d814a429a7a9a04fa4b88e
+  - 3ca83c90d9792e94daa3c6368e855737
+  - f5f570de05eab6c46bb3784b2af9a85f
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
