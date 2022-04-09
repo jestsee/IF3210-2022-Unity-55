@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class ZenModeScoreboard : MonoBehaviour
+public class ZenScoreboard : MonoBehaviour
 {
     private Transform entryContainer;
     private Transform entryTemplate;
@@ -14,7 +14,7 @@ public class ZenModeScoreboard : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("WaveScoreboard awake called");
+        Debug.Log("ZenScoreboard awake called");
         // AddScoreEntry(100, 2, "AHA");
         DisplayScoreboard();
     }

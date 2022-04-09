@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45061475, g: 0.4986083, b: 0.56437457, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -829,6 +829,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warningText: {fileID: 839222784}
   playerHealth: {fileID: 33458251}
+  time2: 
+  restartDelay: 5
+  waveScoreboard: {fileID: 1255660886}
 --- !u!1 &103497942
 GameObject:
   m_ObjectHideFlags: 0

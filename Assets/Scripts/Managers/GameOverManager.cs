@@ -14,8 +14,8 @@ public class GameOverManager : MonoBehaviour
     public string time2;
 
     public float restartDelay = 5f;
-    //public WaveScoreboard waveScoreboard;
-    public ZenModeScoreboard waveScoreboard;
+    public WaveScoreboard waveScoreboard;
+    //public ZenScoreboard waveScoreboard;
     Animator anim;
     float restartTimer;
 
@@ -39,10 +39,10 @@ public class GameOverManager : MonoBehaviour
 
             // get name, wave, score
             string name = PlayerPrefs.GetString("name");
-            float time = TimerManager.timer;
-            Debug.Log(time);
-            //int wave = WaveManager.wave;
-            //int score = ScoreManager.score;
+            //float time = TimerManager.timer;
+            //Debug.Log(time);
+            int wave = WaveManager.wave;
+            int score = ScoreManager.score;
 
             // save score to scoreboard
             //if (!isUpdated)
