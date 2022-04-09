@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     PlayerShooting[] playerShootings;
     bool isDead;
     bool damaged;
+    int maxHealth = 100;
 
 
     void Awake()
@@ -69,6 +70,18 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void TakePowerUp(int amount)
+    {
+        if (currentHealth + amount > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            currentHealth += amount;
+        }
+        healthSlider.value = currentHealth;
+    }
 
     void Death()
     {
