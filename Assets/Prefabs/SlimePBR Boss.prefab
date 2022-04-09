@@ -32,6 +32,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimePBR Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 6027892633894500712, guid: 206d23300e81f9a4cb388b8c9c5224b3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6030313487930170582, guid: 206d23300e81f9a4cb388b8c9c5224b3,
         type: 3}
       propertyPath: m_RootOrder

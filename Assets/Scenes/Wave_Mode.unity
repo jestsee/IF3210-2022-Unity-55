@@ -9299,11 +9299,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossPool:
-  - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
-  - {fileID: 6030313487930170582, guid: 206d23300e81f9a4cb388b8c9c5224b3, type: 3}
-  - {fileID: 3593730919934188229, guid: 1318812e7b13dbe4784c458aadceb9d4, type: 3}
   - {fileID: 6153282916429074751, guid: 5d47032c40ec5bd4baa1b4f3a5052bb2, type: 3}
   - {fileID: 2286943263351396860, guid: 4f440ec70964ce24c8e6e26b996c02d2, type: 3}
+  - {fileID: 4899962670464158427, guid: ad2240ec21a681f47aab594763290f4b, type: 3}
+  - {fileID: 9055190638709033498, guid: 8258be5355703994eae7e1f9092e5e46, type: 3}
+  - {fileID: 408840207689749322, guid: c1ee330d1bcb2d244a84dc994a909ee0, type: 3}
   waves:
   - name: 1
     enemyPool:

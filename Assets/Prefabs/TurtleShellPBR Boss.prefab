@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurtleShellPBR Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 3587222125729761301, guid: 1318812e7b13dbe4784c458aadceb9d4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588825226468543600, guid: 1318812e7b13dbe4784c458aadceb9d4,
+        type: 3}
+      propertyPath: m_Speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3588825226468543606, guid: 1318812e7b13dbe4784c458aadceb9d4,
         type: 3}
       propertyPath: attackDamage
