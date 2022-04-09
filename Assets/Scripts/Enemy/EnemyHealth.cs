@@ -17,35 +17,32 @@ public class EnemyHealth : MonoBehaviour
     bool isSinking;
 
 
-    void Awake()
+    void Awake ()
     {
-        // Mendapatkan reference component
-        anim = GetComponent<Animator>();
-        enemyAudio = GetComponent<AudioSource>();
-        hitParticles = GetComponentInChildren<ParticleSystem>();
-        capsuleCollider = GetComponent<CapsuleCollider>();
+        anim = GetComponent <Animator> ();
+        enemyAudio = GetComponent <AudioSource> ();
+        hitParticles = GetComponentInChildren <ParticleSystem> ();
+        capsuleCollider = GetComponent <CapsuleCollider> ();
 
-        // Set current health
         currentHealth = startingHealth;
     }
 
 
-    void Update()
+    void Update ()
     {
         if (isSinking)
         {
-            // memindahkan object ke bawah
-            transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
+            transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
         }
     }
 
 
-    public void TakeDamage(int amount, Vector3 hitPoint)
+    public void TakeDamage (int amount, Vector3 hitPoint)
     {
         if (isDead)
             return;
 
-        enemyAudio.Play();
+        enemyAudio.Play ();
 
         currentHealth -= amount;
 
@@ -54,33 +51,30 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Death();
+            Death ();
         }
     }
 
 
-    void Death()
+    void Death ()
     {
         isDead = true;
 
         capsuleCollider.isTrigger = true;
 
-        anim.SetTrigger("Dead");
+        anim.SetTrigger ("Dead");
 
         enemyAudio.clip = deathClip;
-        enemyAudio.Play();
+        enemyAudio.Play ();
     }
 
 
-    public void StartSinking()
+    public void StartSinking ()
     {
-        // Disable NavMesh component
-        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-
-        // Set Rigidbody ke kinematic
-        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = false;
+        GetComponent<Rigidbody> ().isKinematic = true;
         isSinking = true;
         ScoreManager.score += scoreValue;
-        Destroy(gameObject, 2f);
+        Destroy (gameObject, 2f);
     }
 }

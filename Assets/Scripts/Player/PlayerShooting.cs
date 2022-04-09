@@ -3,18 +3,17 @@
 public class PlayerShooting : MonoBehaviour
 {
     public int damagePerShot = 20;                  
-    public float timeBetweenBullets = 0.30f; // tadinya 0.15f        
+    public float timeBetweenBullets = 0.15f;        
     public float range = 100f;                      
-    float timer;    
-    
-    Ray shootRay = new Ray();                                   
+
+    float timer;                                    
+    Ray shootRay;                                   
     RaycastHit shootHit;                            
     int shootableMask;                             
     ParticleSystem gunParticles;                    
     LineRenderer gunLine;                           
     AudioSource gunAudio;                           
     Light gunLight;                                 
-    
     float effectsDisplayTime = 0.2f;                
 
     void Awake()
@@ -30,7 +29,7 @@ public class PlayerShooting : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
+        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
         {
             Shoot();
         }
@@ -47,7 +46,7 @@ public class PlayerShooting : MonoBehaviour
         gunLight.enabled = false;
     }
 
-    public void Shoot()
+    void Shoot()
     {
         timer = 0f;
 

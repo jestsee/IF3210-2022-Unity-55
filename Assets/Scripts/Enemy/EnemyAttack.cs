@@ -6,39 +6,43 @@ public class EnemyAttack : MonoBehaviour
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 10;
 
-
     Animator anim;
     GameObject player;
     PlayerHealth playerHealth;
-    EnemyHealth enemyHealth;
-    bool playerInRange;
+    EnemyHealth enemyHealth;
+    bool playerInRange;
     float timer;
 
 
-    void Awake ()
+    void Awake()
     {
-        player = GameObject.FindGameObjectWithTag ("Player");
-        playerHealth = player.GetComponent <PlayerHealth> ();
-        anim = GetComponent <Animator> ();
-        // Mendapatkan Enemy health
-        enemyHealth = GetComponent<EnemyHealth>();
-    }
+        //Mencari game object dengan tag "Player"
+        player = GameObject.FindGameObjectWithTag("Player");
 
-    // Callback jika ada suatu object masuk ke dalam trigger
-    void OnTriggerEnter (Collider other)
+        //mendapatkan komponen player health
+        playerHealth = player.GetComponent<PlayerHealth>();
+
+        //mendapatkan komponen Animator
+        anim = GetComponent<Animator>();
+        enemyHealth = GetComponent<EnemyHealth>();      
+    }
+
+
+    //Callback jika ada suatu object masuk kedalam trigger
+    void OnTriggerEnter(Collider other)
     {
-        // Set player in range
-        if (other.gameObject == player && other.isTrigger == false)
+        //Set player in range
+        if (other.gameObject == player)
         {
             playerInRange = true;
-            
         }
     }
 
-    // Callback jika ada object yang keluar dari trigger
+    //Callback jika ada object yang keluar dari trigger
     void OnTriggerExit(Collider other)
     {
-        if(other.gameObject == player && other.isTrigger == false)
+        //Set player not in range
+        if (other.gameObject == player)
         {
             playerInRange = false;
         }
@@ -49,11 +53,12 @@ public class EnemyAttack : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
+        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
         {
             Attack();
         }
 
+        //mentrigger animasi PlayerDead jika darah player kurang dari sama dengan 0
         if (playerHealth.currentHealth <= 0)
         {
             anim.SetTrigger("PlayerDead");
@@ -63,9 +68,10 @@ public class EnemyAttack : MonoBehaviour
 
     void Attack()
     {
-        timer = 0f;
+        //Reset timer
+        timer = 0f;
 
-        // Taking damage
+        //Taking Damage
         if (playerHealth.currentHealth > 0)
         {
             playerHealth.TakeDamage(attackDamage);
