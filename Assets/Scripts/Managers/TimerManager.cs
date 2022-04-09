@@ -7,7 +7,7 @@ public class TimerManager : MonoBehaviour
 {
     private float timeDuration = 60f;
 
-    private float timer;
+    public static float timer;
 
     public PlayerHealth playerHealth;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+//using TimerManager;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -10,12 +11,13 @@ public class GameOverManager : MonoBehaviour
     public PlayerHealth playerHealth;
     private Transform gameOverText;    
     private bool isUpdated = false;
+    public string time2;
 
-    // public float restartDelay = 5f;
-    // public WaveScoreboard waveScoreboard;
-
+    public float restartDelay = 5f;
+    //public WaveScoreboard waveScoreboard;
+    public ZenModeScoreboard waveScoreboard;
     Animator anim;
-    // float restartTimer;
+    float restartTimer;
 
     void Awake()
     {
@@ -37,8 +39,10 @@ public class GameOverManager : MonoBehaviour
 
             // get name, wave, score
             string name = PlayerPrefs.GetString("name");
-            int wave = WaveManager.wave;
-            int score = ScoreManager.score;
+            float time = TimerManager.timer;
+            Debug.Log(time);
+            //int wave = WaveManager.wave;
+            //int score = ScoreManager.score;
 
             // save score to scoreboard
             //if (!isUpdated)
@@ -55,13 +59,6 @@ public class GameOverManager : MonoBehaviour
 
             // display game over animation
             anim.SetTrigger("GameOver");
-
-            //restartTimer += Time.deltaTime;
-
-            //if (restartTimer >= restartDelay)
-            //{
-            //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            //}
         }
     }
 
