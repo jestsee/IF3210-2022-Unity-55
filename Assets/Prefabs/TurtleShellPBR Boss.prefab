@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: 3587222125729761301, guid: 1318812e7b13dbe4784c458aadceb9d4,
         type: 3}
       propertyPath: m_Name
-      value: TurtleShellPBR
+      value: TurtleShellPBR Boss
       objectReference: {fileID: 0}
     - target: {fileID: 3588825226468543606, guid: 1318812e7b13dbe4784c458aadceb9d4,
         type: 3}
       propertyPath: attackDamage
-      value: 30
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 3588825226468543607, guid: 1318812e7b13dbe4784c458aadceb9d4,
         type: 3}
@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 3588825226468543607, guid: 1318812e7b13dbe4784c458aadceb9d4,
         type: 3}
       propertyPath: startingHealth
-      value: 1200
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 3593730919934188229, guid: 1318812e7b13dbe4784c458aadceb9d4,
         type: 3}

@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6026292653322655614, guid: 206d23300e81f9a4cb388b8c9c5224b3,
         type: 3}
       propertyPath: attackDamage
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6026292653322655615, guid: 206d23300e81f9a4cb388b8c9c5224b3,
         type: 3}
@@ -25,12 +25,12 @@ PrefabInstance:
     - target: {fileID: 6026292653322655615, guid: 206d23300e81f9a4cb388b8c9c5224b3,
         type: 3}
       propertyPath: startingHealth
-      value: 1000
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 6027892633894500712, guid: 206d23300e81f9a4cb388b8c9c5224b3,
         type: 3}
       propertyPath: m_Name
-      value: SlimePBR
+      value: SlimePBR Boss
       objectReference: {fileID: 0}
     - target: {fileID: 6030313487930170582, guid: 206d23300e81f9a4cb388b8c9c5224b3,
         type: 3}
