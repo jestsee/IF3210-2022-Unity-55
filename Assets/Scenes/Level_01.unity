@@ -699,6 +699,7 @@ MonoBehaviour:
   - {fileID: 2022850296, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
   - {fileID: 1914384308, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
   - {fileID: 1206665591, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
+  - {fileID: 1485438858115186663, guid: e8c6146b19bf2074081560fee4920626, type: 3}
 --- !u!4 &180263586
 Transform:
   m_ObjectHideFlags: 0
@@ -725,6 +726,7 @@ GameObject:
   - component: {fileID: 240257949}
   - component: {fileID: 240257948}
   - component: {fileID: 240257947}
+  - component: {fileID: 240257951}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -747,7 +749,7 @@ MonoBehaviour:
   playerHealth: {fileID: 33458251}
   enemy: {fileID: 1206665591, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
   spawnEnemy: 2
-  spawnTime: 5
+  spawnTime: 1000
   spawnPoints:
   - {fileID: 36326048}
   factory: {fileID: 180263585}
@@ -766,7 +768,7 @@ MonoBehaviour:
   playerHealth: {fileID: 33458251}
   enemy: {fileID: 1914384308, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
   spawnEnemy: 1
-  spawnTime: 3
+  spawnTime: 1000
   spawnPoints:
   - {fileID: 428024867}
   factory: {fileID: 180263585}
@@ -785,7 +787,7 @@ MonoBehaviour:
   playerHealth: {fileID: 33458251}
   enemy: {fileID: 2022850296, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
   spawnEnemy: 0
-  spawnTime: 3
+  spawnTime: 1000
   spawnPoints:
   - {fileID: 7785515}
   factory: {fileID: 180263585}
@@ -803,6 +805,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &240257951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240257946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a99222b1e4a384e923ac7e86efc709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 33458251}
+  enemy: {fileID: 1485438858115186663, guid: e8c6146b19bf2074081560fee4920626, type: 3}
+  spawnEnemy: 3
+  spawnTime: 5
+  spawnPoints:
+  - {fileID: 1001630278}
+  factory: {fileID: 180263585}
 --- !u!1 &428024866
 GameObject:
   m_ObjectHideFlags: 0
@@ -6287,6 +6308,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857069320}
   m_CullTransparentMesh: 0
+--- !u!1 &1001630277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001630278}
+  m_Layer: 0
+  m_Name: SkeletonSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1001630278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001630277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.13, y: 0, z: 10.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1054830879
 GameObject:
   m_ObjectHideFlags: 0
