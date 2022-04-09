@@ -42,7 +42,7 @@ public class EnemyExplosion : MonoBehaviour
         if (playerInRange)
         {
             GameObject exploder = Instantiate(Explosion, transform.position, transform.rotation).gameObject;
-            Destroy(gameObject, 2.0f);
+            Destroy(gameObject, 0.001f);
             Destroy(exploder, 2.0f);
         }
     }
