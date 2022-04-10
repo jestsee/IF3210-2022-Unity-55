@@ -64,6 +64,11 @@ Menampilkan performa permainan.
 ![](Screenshots/DiagonalWeapon.jpg)
 #### Rear Weapon
 ![](Screenshots/RearWeapon.jpg)
+### Game Over
+#### Wave Mode
+![](Screenshots/GameOverWaveMode.jpg)
+#### Zen Mode
+![](Screenshots/GameOverZenMode.jpg)
 ## Pembagian kerja anggota
 NIM | Nama | Tugas
 --- | --- | ---
