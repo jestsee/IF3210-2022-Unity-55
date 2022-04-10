@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 9053878721755301742, guid: 8258be5355703994eae7e1f9092e5e46,
         type: 3}
       propertyPath: startingHealth
-      value: 1000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 9053878721755301743, guid: 8258be5355703994eae7e1f9092e5e46,
         type: 3}
       propertyPath: attackDamage
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9053957085351687160, guid: 8258be5355703994eae7e1f9092e5e46,
         type: 3}

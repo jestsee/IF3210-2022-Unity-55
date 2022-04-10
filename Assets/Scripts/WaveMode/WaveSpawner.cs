@@ -27,6 +27,12 @@ public class WaveSpawner : MonoBehaviour
     // random spawn point
     public Transform[] spawnPoints;
 
+    // boss spawn point
+    public Transform bossSpawnPoint;
+
+    // skeleton spawn point (tengah?)
+    public Transform[] skeletonSpawnPoints;
+
     // weapon upgrade
     public WeaponUpgradeUI weaponUpgrade;
 
@@ -172,9 +178,17 @@ public class WaveSpawner : MonoBehaviour
         // spawn enemy
         Debug.Log("Spawning Enemy: " + _enemy.name);
 
-        // TODO setiap enemy ada spawn point masing2?
-        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(_enemy, _sp.position, _sp.rotation);
+        // enemy spawn points
+        if (string.Equals(_enemy.name, "Skeleton"))
+        {
+            Debug.Log("Spawn Skeleton");
+            Transform _sp = skeletonSpawnPoints[Random.Range(0, skeletonSpawnPoints.Length)];
+            Instantiate(_enemy, _sp.position, _sp.rotation);
+        } else
+        {
+            Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            Instantiate(_enemy, _sp.position, _sp.rotation);
+        }
     }
 
     Transform RandomizeEnemy (Wave _wave)
@@ -192,7 +206,7 @@ public class WaveSpawner : MonoBehaviour
 
         // spawn point nya random
         // atau tentuin point khusus boss?
-        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Transform _sp = bossSpawnPoint;
 
         // spawn boss sesuai dengan wave ke berapa
         Instantiate(_boss, _sp.position, _sp.rotation);
