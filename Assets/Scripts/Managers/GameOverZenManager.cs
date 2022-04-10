@@ -54,7 +54,7 @@ public class GameOverZenManager : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         WinManager.isWin = false;
     }
 
