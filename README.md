@@ -67,6 +67,6 @@ Menampilkan performa permainan.
 ## Pembagian kerja anggota
 NIM | Nama | Tugas
 --- | --- | ---
-13519011 | Jesica |
+13519011 | Jesica | Wave Mode, Weapon Upgrade, Main Menu, Boss 
 13519047 | Rhea Elka Pandumpi | Player Attribute, Orbs, Bomber
 13519213 | Clarisa Natalia Edelin | Zen Mode, Skeleton
