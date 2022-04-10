@@ -69,4 +69,4 @@ NIM | Nama | Tugas
 --- | --- | ---
 13519011 | Jesica |
 13519047 | Rhea Elka Pandumpi | Player Attribute, Orbs, Bomber
-13519213 | Clarisa Natalia Edelin | 
+13519213 | Clarisa Natalia Edelin | Zen Mode, Skeleton
