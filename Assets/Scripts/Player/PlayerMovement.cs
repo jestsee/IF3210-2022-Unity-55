@@ -70,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
             //Rotasi player
             playerRigidbody.MoveRotation(newRotation);
         }
+
+        playerRigidbody.isKinematic = false;
     }
 
     public void Animating(float h, float v)

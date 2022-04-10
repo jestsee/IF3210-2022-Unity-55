@@ -28,7 +28,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform[] spawnPoints;
 
     // boss spawn point
-    //public Transform bossSpawnPoint;
+    public Transform bossSpawnPoint;
 
     // skeleton spawn point (tengah?)
     public Transform[] skeletonSpawnPoints;
@@ -206,7 +206,7 @@ public class WaveSpawner : MonoBehaviour
 
         // spawn point nya random
         // atau tentuin point khusus boss?
-        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Transform _sp = bossSpawnPoint;
 
         // spawn boss sesuai dengan wave ke berapa
         Instantiate(_boss, _sp.position, _sp.rotation);

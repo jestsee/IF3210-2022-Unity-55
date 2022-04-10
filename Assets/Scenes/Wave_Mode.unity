@@ -10324,6 +10324,8 @@ MonoBehaviour:
   - {fileID: 9083842937541373870, guid: 6bbf9ef8fcce5114482d813a9b680d17, type: 3}
   - {fileID: 304385461253102273, guid: c88f58001921a7a4a9a51563d60192e6, type: 3}
   - {fileID: 6813828724793316333, guid: c0c22a60c7b049f41b6bed6dd108a447, type: 3}
+  bossSpawnPoint: {fileID: 2848184888090971025, guid: eaa7741a7b8a86749b58c541f11e9e88,
+    type: 3}
   skeletonSpawnPoints:
   - {fileID: 8745574277898036913, guid: 77bfae8c18f59cc4c8595c4d1fc6aeae, type: 3}
   - {fileID: 2031830206958591936, guid: 732806fb505e83241b25495a44933b44, type: 3}
