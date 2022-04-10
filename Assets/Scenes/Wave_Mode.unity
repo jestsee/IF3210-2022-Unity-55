@@ -685,7 +685,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33458244}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb51806414c7c594c96127ab29a5ea7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingSpeed: 10
+  startingSpeed: 5
   currentSpeed: 0
   speedSlider: {fileID: 1608825926}
 --- !u!1 &38786124
@@ -9034,10 +9034,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 558395406, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
-      propertyPath: rateOfFire
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54,
         type: 3}
       propertyPath: m_RootOrder
@@ -10187,117 +10183,143 @@ MonoBehaviour:
   - {fileID: 9055190638709033498, guid: 8258be5355703994eae7e1f9092e5e46, type: 3}
   - {fileID: 408840207689749322, guid: c1ee330d1bcb2d244a84dc994a909ee0, type: 3}
   waves:
-  - name: 1
+  - name: Wave 1
     enemyPool:
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    weight: 3
+    rate: 5
+  - name: Wave 2
+    enemyPool:
+    - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
     - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
     weight: 3
     rate: 5
-  - name: 2
+  - name: Wave 3
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
     weight: 5
     rate: 5
-  - name: 3
+  - name: Wave 4
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    - {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
-    weight: 8
-    rate: 5
-  - name: 4
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 6
+    rate: 6
+  - name: Wave 5
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 5
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 6
+    rate: 7
+  - name: Wave 6
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 6
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 10
+    rate: 10
+  - name: Wave 7
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 7
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 20
+    rate: 10
+  - name: Wave 8
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 8
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 25
+    rate: 10
+  - name: Wave 9
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 9
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 30
+    rate: 10
+  - name: Wave 10
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 10
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 60
+    rate: 10
+  - name: Wave 10
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 11
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 60
+    rate: 10
+  - name: Wave 11
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 12
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 80
+    rate: 10
+  - name: Wave 12
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 13
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 150
+    rate: 10
+  - name: Wave 13
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 14
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 250
+    rate: 10
+  - name: Wave 14
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 15
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 250
+    rate: 25
+  - name: Wave 15
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
-    weight: 1
-    rate: 5
-  - name: 16
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    weight: 500
+    rate: 60
+  - name: Wave 16
     enemyPool:
-    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
-    - {fileID: 1206665596, guid: f264ab47e25d0374ba89abced0b94b2a, type: 3}
     - {fileID: 1914384318, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
+    - {fileID: 2022850303, guid: 73871ddf5c8d02442be00d9671a9d510, type: 3}
+    - {fileID: 1479999323261652659, guid: bb73b02f2e4db184a9ad78088763dd54, type: 3}
+    - {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}
+    - {fileID: 6153282916429074751, guid: 5d47032c40ec5bd4baa1b4f3a5052bb2, type: 3}
+    - {fileID: 2286943263351396860, guid: 4f440ec70964ce24c8e6e26b996c02d2, type: 3}
+    - {fileID: 408840207689749322, guid: c1ee330d1bcb2d244a84dc994a909ee0, type: 3}
+    - {fileID: 9055190638709033498, guid: 8258be5355703994eae7e1f9092e5e46, type: 3}
     weight: 1000
-    rate: 5
+    rate: 60
   spawnPoints:
   - {fileID: 9083842937541373870, guid: 6bbf9ef8fcce5114482d813a9b680d17, type: 3}
   - {fileID: 304385461253102273, guid: c88f58001921a7a4a9a51563d60192e6, type: 3}
@@ -10398,64 +10420,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134093996}
   m_CullTransparentMesh: 0
---- !u!1001 &1802325366090729193
+--- !u!1001 &4581915847813941329
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 100100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
-      propertyPath: m_Name
-      value: Zombie
-      objectReference: {fileID: 0}
-    - target: {fileID: 100100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+    - target: {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+    - target: {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.433016
       objectReference: {fileID: 0}
-    - target: {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+    - target: {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.635478
       objectReference: {fileID: 0}
-    - target: {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+    - target: {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
       propertyPath: m_LocalPosition.z
       value: -24.72
       objectReference: {fileID: 0}
-    - target: {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+    - target: {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+    - target: {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+    - target: {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+    - target: {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+    - target: {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+    - target: {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400100, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+    - target: {fileID: 2780156309707379804, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2780156309707475388, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
+      propertyPath: m_Name
+      value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 2780156309707475388, guid: 2598a73314e607140999c56a2c1e5ed2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f2a03eaf53eec964aa81784732592d2e, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 2598a73314e607140999c56a2c1e5ed2, type: 3}

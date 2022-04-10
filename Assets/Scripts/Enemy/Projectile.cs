@@ -98,12 +98,23 @@ public class Projectile : MonoBehaviour
         {
             Attack();
             Destroy(gameObject);
+
+            Rigidbody rp = player.GetComponent<Rigidbody>();
+            rp.isKinematic = true;
+            
+
         }
         else
         {
             transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
             Destroy(gameObject, 0.8f);
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        Rigidbody rp = player.GetComponent<Rigidbody>();
+        rp.isKinematic = false;
     }
 
 }
