@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverZenManager : MonoBehaviour
 {
-    
+    public Text warningText;
     public PlayerHealth playerHealth;
     private Transform gameOverText;
     private bool isUpdated = false;
@@ -34,7 +34,20 @@ public class GameOverZenManager : MonoBehaviour
             string name = PlayerPrefs.GetString("name");
             float time = TimerManager.timer;
             Debug.Log(time);
-            
+
+            if (!isUpdated)
+            {
+                GameObject waveScoreboard = GameObject.FindGameObjectWithTag("ScoreboardZen");
+                ZenScoreboard _waveScoreboard = waveScoreboard.GetComponent<ZenScoreboard>();
+                if (_waveScoreboard == null)
+                {
+                    Debug.Log("Null weh waveScoreboard-nya");
+                }
+                _waveScoreboard.AddScoreEntry(time, name);
+                isUpdated = true;
+            }
+
+
             anim.SetTrigger("GameOver");
         }
     }

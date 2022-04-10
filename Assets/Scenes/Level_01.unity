@@ -468,6 +468,19 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+--- !u!114 &33458252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33458244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b809abf7d5135446b42455a00876169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverManager: {fileID: 38786131}
 --- !u!135 &33458253
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -481,19 +494,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &33458254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33458244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec23ede6cd50b4d469c10465b307f39a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverManager: {fileID: 38786130}
 --- !u!1 &36326047
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +537,6 @@ GameObject:
   - component: {fileID: 38786126}
   - component: {fileID: 38786125}
   - component: {fileID: 38786129}
-  - component: {fileID: 38786130}
   - component: {fileID: 38786131}
   m_Layer: 5
   m_Name: HUDCanvas
@@ -655,23 +654,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &38786130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38786124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9c9e0011c2ed97428a4efc03b455359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  warningText: {fileID: 839222784}
-  playerHealth: {fileID: 33458251}
-  time2: 
-  restartDelay: 5
-  waveScoreboard: {fileID: 0}
 --- !u!114 &38786131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,6 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d364563eed2da44a17f54847b5a6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warningText: {fileID: 0}
   playerHealth: {fileID: 33458251}
   time2: 
   restartDelay: 5
@@ -700,7 +683,7 @@ GameObject:
   - component: {fileID: 156041722}
   m_Layer: 0
   m_Name: Scoreboard
-  m_TagString: Untagged
+  m_TagString: ScoreboardZen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
