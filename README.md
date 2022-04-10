@@ -36,34 +36,34 @@ Menampilkan performa permainan.
 * TMPro
 ## Screenshot Aplikasi
 ### Input Nama  
-![](Docs/NameInput.jpg)
+![](Screenshots/NameInput.jpg)
 ### Main Menu
-![](Docs/MainMenu.jpg)
+![](Screenshots/MainMenu.jpg)
 ### Scoreboard  
-![](Docs/Scoreboard.jpg)
-![](Docs/WaveModeScoreboard.jpg)
-![](Docs/ZenModeScoreboard.jpg)
+![](Screenshots/Scoreboard.jpg)
+![](Screenshots/WaveModeScoreboard.jpg)
+![](Screenshots/ZenModeScoreboard.jpg)
 ### Game Mode Option  
-![](Docs/GameMode.jpg)
+![](Screenshots/GameMode.jpg)
 ### Zen Mode  
-![](Docs/ZenMode.jpg)
+![](Screenshots/ZenMode.jpg)
 ### Orbs  
-![](Docs/BossOrbs.jpg)
+![](Screenshots/BossOrbs.jpg)
 ### Additional Mobs
 #### Skeleton  
-![](Docs/Skeleton.jpg)
+![](Screenshots/Skeleton.jpg)
 #### Bomber  
-![](Docs/Bomber.jpg)
+![](Screenshots/Bomber.jpg)
 #### Boss  
-![](Docs/BossOrbs.jpg)
-![](Docs/Boss2.jpg)
-![](Docs/Boss3.jpg)
+![](Screenshots/BossOrbs.jpg)
+![](Screenshots/Boss2.jpg)
+![](Screenshots/Boss3.jpg)
 ### Weapon Upgrade  
-![](Docs/WeaponUpgrade.jpg)
+![](Screenshots/WeaponUpgrade.jpg)
 #### Diagonal Weapon
-![](Docs/DiagonalWeapon.jpg)
+![](Screenshots/DiagonalWeapon.jpg)
 #### Rear Weapon
-![](Docs/RearWeapon.jpg)
+![](Screenshots/RearWeapon.jpg)
 ## Pembagian kerja anggota
 NIM | Nama | Tugas
 --- | --- | ---
