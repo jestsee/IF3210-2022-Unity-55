@@ -12,27 +12,26 @@ public class Projectile : MonoBehaviour
     private Rigidbody rb;
     Animator anim;
     PlayerHealth playerHealth;
-    EnemyHealth enemyHealth;
+    //EnemyHealth enemyHealth;
     float timer;
     GameObject player;
+
+    CapsuleCollider capsuleCollider;
     bool isSinking;
     bool playerInRange;
-    int floorMask;
 
     private void Start()
     {
         //Mencari game object dengan tag "Player"
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
 
         //mendapatkan komponen player health
         playerHealth = player.GetComponent<PlayerHealth>();
         rb = GetComponent<Rigidbody>();
 
-        floorMask = LayerMask.GetMask("Floor");
-
         Impulse();
-       
+
     }
 
     // Update is called once per frame
@@ -44,8 +43,8 @@ public class Projectile : MonoBehaviour
 
     void Attack()
     {
-        //Reset timer
-        timer = 0f;
+        //Reset timer
+        timer = 0f;
 
         //Taking Damage
         if (playerHealth.currentHealth > 0)
@@ -75,37 +74,36 @@ public class Projectile : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        timer += Time.deltaTime;
+    //void Update()
+    //{
+    //    timer += Time.deltaTime;
 
-        if (timer >= timeBetweenAttacks && playerInRange /*&& enemyHealth.currentHealth > 0*/)
+    //    if (/*timer >= timeBetweenAttacks &&*/ playerInRange /*&& enemyHealth.currentHealth > 0*/)
+    //    {
+    //        Attack();
+    //        Destroy(gameObject);
+    //    }
+    //    else
+    //    {
+    //        transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
+    //        Destroy(gameObject, 0.8f);
+    //    }
+
+    //}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Debug.Log(collision.collider.tag);
+        if (collision.collider.tag == "Player")
         {
-            bool Hit = Physics.Raycast(transform.position, transform.forward, 13f, LayerMask.GetMask("Floor"));
-            if (Hit)
-            {
-                Attack();
-                Destroy(gameObject);
-            }
+            Attack();
+            Destroy(gameObject);
         }
         else
         {
             transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
-            Destroy(gameObject,0.8f);
+            Destroy(gameObject, 0.8f);
         }
-        
-        
     }
 
-    //private void FixedUpdate()
-    //{
-    //    if (playerInRange)
-    //    {
-    //        Debug.Log("Fixed update kepanggil");
-    //        rb.velocity = Vector3.zero;
-    //    }
-    //}
-
 }
-
-
